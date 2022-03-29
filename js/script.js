@@ -1,7 +1,21 @@
 /*jslint node: true */
 'use strict';
 
-const category = "toys";
 
-console.log(`http://someurl.ru/${category}/5`);
+let numberOfFilms = prompt ('Сколько фильмов вы уже посмотрели?',  "");
 
+let lastFilm = prompt ('Один из последних просмотренных фильмов?',  "");
+let yourRate = prompt ('На сколько оцените его?',  "");
+
+let personalMovieDB = {
+    count : numberOfFilms,
+    movies : {
+        lastFilm: yourRate,
+    },
+    actors : {},
+    genres : [],
+    privat : false,
+};
+
+
+console.log (personalMovieDB);
