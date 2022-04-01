@@ -44,74 +44,132 @@
 //       console.log(personalMovieDB);
 
 
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
 
-// **** задание 2 - урок 15 - Циклы и условия - Мой вариант ****
+// **** задание 2 - урок 15 - Циклы и условия - Мой вариант 1 (while) ****
 
-    let numberOfFilms = +prompt ('Сколько фильмов вы уже посмотрели?',  '');
+// let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-    while (numberOfFilms <= 0 || numberOfFilms > 50){
-        numberOfFilms =  prompt ('Ваш ответ либо мал либо велик. Напишите правильное число?', '');
-        while (numberOfFilms <= 0 || numberOfFilms > 50){
-            alert('Мы решили за вас, что это будет 30 фильмов')
-            numberOfFilms =  "30";
-        }
-    }
+// while (numberOfFilms <= 0 || numberOfFilms > 50) {
+//     numberOfFilms = prompt('Ваш ответ либо мал либо велик. Напишите правильное число?', '');
+//     while (numberOfFilms <= 0 || numberOfFilms > 50) {
+//         alert('Мы решили за вас, что это будет 30 фильмов')
+//         numberOfFilms = "30";
+//     }
+// }
 
-    const personalMovieDB = {
-        count : numberOfFilms,
-        movies : {},
-        actors : {},
-        genres : [],
-        privat : false
-    };
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
+
+// let a = prompt('Один из последних просмотренных фильмов?', ''),
+//     b = +prompt('На сколько оцените его?', ''),
+//     c = prompt('Один из последних просмотренных фильмов?', ''),
+//     d = +prompt('На сколько оцените его?', '');
+
+// personalMovieDB.movies[a] = b;
+// personalMovieDB.movies[c] = d; // не понял я почему по 2 раза спрашивает
+
+// let lengthOfMovies = personalMovieDB.movies[a];
+
+// while (lengthOfMovies.length <= 0 || lengthOfMovies.length > 50) {
+//     lengthOfMovies = prompt('Ваш ответ либо мал либо велик. Напишите правильно', '');
+//     alert('Мы решили за вас, что это будет фильм "Сияние" ');
+//     numberOfFilms = "Сияние";
+// }
+
+// let rateOfMovies = personalMovieDB.movies[c];
+
+// while (rateOfMovies <= 0 || rateOfMovies > 50) {
+//     rateOfMovies = prompt('Ваш ответ либо мал либо велик. Напишите правильное число', '');
+//     alert('Мы решили за вас, что рейтинг будет 5')
+//     rateOfMovies = "5";
+// }
+
+// // мой цикл 
+
+// let count = personalMovieDB.count;
+
+// while (count <= 10) {
+//     alert('Ошибка');
+//     break;
+// }
+
+// while (count < 10) {
+//     alert("Просмотрено довольно мало фильмов");
+//     break;
+// }
+// while (count > 10 || count < 30) {
+//     alert("Вы классический зритель");
+//     break;
+// }
+// while (count > 30) {
+//     alert("Вы киноман");
+//     break;
+// }
+// console.log(personalMovieDB);
+
+ // **** задание 2 - урок 15 - Циклы и условия - вариант учителя 1 // цикл for) ****
+
+const numberOfFilms = +prompt ('Сколько фильмов вы уже посмотрели?',  '');
+
+const personalMovieDB = {
+    count : numberOfFilms,
+    movies : {},
+    actors : {},
+    genres : [],
+    privat : false
+};
+
+// const a = prompt ('Один из последних просмотренных фильмов?', ''), 
+//       b =  prompt ('На сколько оцените его?', ''),
+//       c = prompt ('Один из последних просмотренных фильмов?', ''),
+//       d =  prompt ('На сколько оцените его?', '');
+
+//       personalMovieDB.movies[a] = b;
+//       personalMovieDB.movies[c] = d;  // не понял я почему по 2 раза спрашивает
+
     
-    let a = prompt ('Один из последних просмотренных фильмов?', ''), 
-          b =  +prompt ('На сколько оцените его?', ''),
-          c = prompt ('Один из последних просмотренных фильмов?', ''),
-          d =  +prompt ('На сколько оцените его?', '');
-    
-          personalMovieDB.movies[a] = b;
-          personalMovieDB.movies[c] = d;  // не понял я почему по 2 раза спрашивает
-    
-        let lengthOfMovies = personalMovieDB.movies[a];
+      // 1
+      for (let i = 0; i < 2; i++){
+        const a = prompt ('Один из последних просмотренных фильмов?', ''),
+              b =  prompt ('На сколько оцените его?', '');
 
-        while (lengthOfMovies.length <= 0 || lengthOfMovies.length > 50){           
-            lengthOfMovies =  prompt ('Ваш ответ либо мал либо велик. Напишите правильно', '');
-            alert('Мы решили за вас, что это будет фильм "Сияние" ');
-            numberOfFilms =  "Сияние";
-    }
+              if (a !== null && b !== null && a !== '' && b !== '' && a < 50 && b < 50 ){
+                personalMovieDB.movies[a] = b;
+              }
+              else {
+                  i--;
+              }              
+      }
 
-        let rateOfMovies = personalMovieDB.movies[c];
+      console.log(personalMovieDB.movies);
 
-        while (rateOfMovies <=0 || rateOfMovies > 50 ){           
-            rateOfMovies =  prompt ('Ваш ответ либо мал либо велик. Напишите правильное число', '');
-            alert('Мы решили за вас, что рейтинг будет 5')
-                rateOfMovies =  "5";
-        }
- 
-// мой цикл          
+    //   // 2      
+    //   let movie = personalMovieDB.movies.length;
+
+    //   for (let i = 0; i > 50, i < 0, i == false; i++){
+    //     movie = prompt ('Один из последних просмотренных фильмов?', '');
+        
+    //   }
 
 
-
-
-let count = personalMovieDB.count;
-
-while (count <= 10){
-    alert('Ошибка');
-    break;
-}
-
-while (count < 10){
-    alert ("Просмотрено довольно мало фильмов");
-    break;
-}
-while (count > 10 || count < 30){
-    alert ("Вы классический зритель");
-    break;
-}
-while (count > 30){
-    alert ("Вы киноман");
-    break;
-}
-
-console.log(personalMovieDB);
+      // 3 
+      if (personalMovieDB.count < 10){
+          alert("Просмотрено довольно мало фильмов");
+      }
+      else if(personalMovieDB.count >= 10 && personalMovieDB.count < 30){
+        alert("Вы классический зритель");
+      }
+      else if(personalMovieDB.count >= 30){
+        alert("Вы киноман");
+      }      
+      else {
+        alert('Произошла ошибка');
+      }
