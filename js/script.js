@@ -232,44 +232,50 @@
 //   // );
 // }
 
-let a = prompt('Один из последних просмотренных фильмов?', ''),
-  b = prompt('На сколько оцените его?', ''),
-  i = 0;
+// let a = prompt('Один из последних просмотренных фильмов?', ''),
+//   b = prompt('На сколько оцените его?', ''),
+//   i = 0;
   
 
-const personalMovieDB = {
-  // count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false
-};
+// const personalMovieDB = {
+//   // count: numberOfFilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false
+// };
 
-personalMovieDB.movies[a] = b;
+// personalMovieDB.movies[a] = b;
 
 
-if (a !== null && b !== null && a !== '' && b !== '' && a.length < 50 && b < 50) {
-  do {   
-    a = prompt('Один из последних просмотренных фильмов?', '');
-    b = prompt('На сколько оцените его?', '');
-    personalMovieDB.movies[a] = b;
-    i++;
-  } while (
-    i < 1
-  );
-  console.log(personalMovieDB.movies);
+// if (a !== null && b !== null && a !== '' && b !== '' && a.length < 50 && b < 50) {
+//   do {   
+//     a = prompt('Один из последних просмотренных фильмов?', '');
+//     b = prompt('На сколько оцените его?', '');
+//     personalMovieDB.movies[a] = b;
+//     i++;
+//   } while (
+//     i < 1
+//   );
+//   console.log(personalMovieDB.movies);
 
-} else { 
+// } else { 
 
-  do {
-    a = prompt('Один из последних просмотренных фильмов?', '');
-    b = prompt('На сколько оцените его?', '');
-    personalMovieDB.movies[a] = b;
-    i++;
+//   do {
+//     a = prompt('Один из последних просмотренных фильмов?', '');
+//     b = prompt('На сколько оцените его?', '');
+//     personalMovieDB.movies[a] = b;
+//     i++;
 
-  } while (
-     a !== null && b !== null && a !== '' && b !== '' && a.length < 50 && b < 50 && i > 1
-  );
+//   } while (
+//      a !== null && b !== null && a !== '' && b !== '' && a.length < 50 && b < 50 && i > 1
+//   );
   
   
-}
+// }
+
+// **** урок 17 - Методы ****
+
+// let str = "stringify";
+// // ring, получаем 4 символа, начиная с позиции 2
+// console.log(str.substr(2, 4));
