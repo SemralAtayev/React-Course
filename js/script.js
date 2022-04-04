@@ -115,17 +115,17 @@
 // }
 // console.log(personalMovieDB);
 
- // **** задание 2 - урок 15 - Циклы и условия - вариант учителя 1 // цикл for) ****
+// **** задание 2 - урок 15 - Циклы и условия - вариант учителя 1 // цикл for) ****
 
-const numberOfFilms = +prompt ('Сколько фильмов вы уже посмотрели?',  '');
+// const numberOfFilms = +prompt ('Сколько фильмов вы уже посмотрели?',  '');
 
-const personalMovieDB = {
-    count : numberOfFilms,
-    movies : {},
-    actors : {},
-    genres : [],
-    privat : false
-};
+// const personalMovieDB = {
+//     count : numberOfFilms,
+//     movies : {},
+//     actors : {},
+//     genres : [],
+//     privat : false
+// };
 
 // const a = prompt ('Один из последних просмотренных фильмов?', ''), 
 //       b =  prompt ('На сколько оцените его?', ''),
@@ -135,41 +135,141 @@ const personalMovieDB = {
 //       personalMovieDB.movies[a] = b;
 //       personalMovieDB.movies[c] = d;  // не понял я почему по 2 раза спрашивает
 
-    
-      // 1
-      for (let i = 0; i < 2; i++){
-        const a = prompt ('Один из последних просмотренных фильмов?', ''),
-              b =  prompt ('На сколько оцените его?', '');
 
-              if (a !== null && b !== null && a !== '' && b !== '' && a < 50 && b < 50 ){
-                personalMovieDB.movies[a] = b;
-              }
-              else {
-                  i--;
-              }              
-      }
+// // 1
+// for (let i = 0; i < 2; i++){
+//   const a = prompt ('Один из последних просмотренных фильмов?', ''),
+//         b =  prompt ('На сколько оцените его?', '');
 
-      console.log(personalMovieDB.movies);
+//         if (a !== null && b !== null && a !== '' && b !== '' && a < 50 && b < 50 ){
+//           personalMovieDB.movies[a] = b;
+//         }
+//         else {
+//             i--;
+//         }              
+// }
 
-    //   // 2      
-    //   let movie = personalMovieDB.movies.length;
+// console.log(personalMovieDB.movies);
 
-    //   for (let i = 0; i > 50, i < 0, i == false; i++){
-    //     movie = prompt ('Один из последних просмотренных фильмов?', '');
-        
-    //   }
+//   // 2      
+//   let movie = personalMovieDB.movies.length;
+
+//   for (let i = 0; i > 50, i < 0, i == false; i++){
+//     movie = prompt ('Один из последних просмотренных фильмов?', '');
+
+//   }
 
 
-      // 3 
-      if (personalMovieDB.count < 10){
-          alert("Просмотрено довольно мало фильмов");
-      }
-      else if(personalMovieDB.count >= 10 && personalMovieDB.count < 30){
-        alert("Вы классический зритель");
-      }
-      else if(personalMovieDB.count >= 30){
-        alert("Вы киноман");
-      }      
-      else {
-        alert('Произошла ошибка');
-      }
+// // 3 
+// if (personalMovieDB.count < 10){
+//     alert("Просмотрено довольно мало фильмов");
+// }
+// else if(personalMovieDB.count >= 10 && personalMovieDB.count < 30){
+//   alert("Вы классический зритель");
+// }
+// else if(personalMovieDB.count >= 30){
+//   alert("Вы киноман");
+// }      
+// else {
+//   alert('Произошла ошибка');
+// }
+
+
+// **** задание 2 - урок 15 - Циклы и условия - вариант мой 1 // цикл do while) ****
+
+
+// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+// const personalMovieDB = {
+//   count: numberOfFilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false
+// };
+
+// let a = prompt('Один из последних просмотренных фильмов?', ''),
+//   b = prompt('На сколько оцените его?', '');
+// let i = 0;
+
+// do {  
+//   personalMovieDB.movies[a] = b;
+//   i += 1;
+// }
+// while (a !== null && b !== null && a !== '' && b !== '' && a < 50 && b < 50 && i <= 2);
+
+//     a = prompt ('Один из последних просмотренных фильмов?', '');
+//     b =  prompt ('На сколько оцените его?', '');
+// let i = 0;
+
+// do {
+//   i += 1;
+// }
+// while (i <= 2);
+
+// console.log(i);
+// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+
+
+
+// if(a !== null && b !== null && a !== '' && b !== '' && a.length < 50 && b < 50 ){
+//     do{
+//       personalMovieDB.movies[a] = b;      
+//       i += 1;
+//       console.log(personalMovieDB.movies);
+//     } while(
+//       i < 2
+//     );
+
+// } else{
+//   alert ('lox33');
+//   // do{   
+//   //   a = prompt('Один из последних просмотренных фильмов?', '');
+//   //   b = prompt('На сколько оцените его?', '');    
+//   // } while(
+//   //    a !== null && b !== null && a !== '' && b !== '' && a < 50 && b < 50 
+//   // );
+// }
+
+let a = prompt('Один из последних просмотренных фильмов?', ''),
+  b = prompt('На сколько оцените его?', ''),
+  i = 0;
+  
+
+const personalMovieDB = {
+  // count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false
+};
+
+personalMovieDB.movies[a] = b;
+
+
+if (a !== null && b !== null && a !== '' && b !== '' && a.length < 50 && b < 50) {
+  do {   
+    a = prompt('Один из последних просмотренных фильмов?', '');
+    b = prompt('На сколько оцените его?', '');
+    personalMovieDB.movies[a] = b;
+    i++;
+  } while (
+    i < 1
+  );
+  console.log(personalMovieDB.movies);
+
+} else { 
+
+  do {
+    a = prompt('Один из последних просмотренных фильмов?', '');
+    b = prompt('На сколько оцените его?', '');
+    personalMovieDB.movies[a] = b;
+    i++;
+
+  } while (
+     a !== null && b !== null && a !== '' && b !== '' && a.length < 50 && b < 50 && i > 1
+  );
+  
+  
+}
