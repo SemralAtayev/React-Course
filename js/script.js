@@ -284,87 +284,130 @@
 
 // **** задание 3 - урок 18 - Используем функции- вариант мой + учителя  ****
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-  numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// function start() {
+//   numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-  while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-  }
-}
-
-// start();
-
-const personalMovieDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false
-};
-
-function rememberMyFilms() {
-  // 1
-  for (let i = 0; i < 2; i++) {
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-      b = prompt('На сколько оцените его?', '');
-
-    if (a !== null && b !== null && a !== '' && b !== '' && a.length < 50 && b < 50) {
-      personalMovieDB.movies[a] = b;
-    } else {
-      i--;
-    }
-  }
-}
-
-// rememberMyFilms();
-
-
-function detectPersonalLevel() {
-  // 3 
-  if (personalMovieDB.count < 10) {
-    console.log("Просмотрено довольно мало фильмов");
-  } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-    console.log("Вы классический зритель");
-  } else if (personalMovieDB.count >= 30) {
-    console.log("Вы киноман");
-  } else {
-    console.log('Произошла ошибка');
-  }
-}
-
-// detectPersonalLevel();
-
-function showMyDB() {
-   if (!personalMovieDB.privat){
-      console.log(personalMovieDB);
-   } else{
-     
-   }
-}
-
-showMyDB();
-
-// вариант учителя с hidden
-
-// function showMyDB(hidden) {
-//   if (!hidden){
-//      console.log(personalMovieDB);
-//   } else{
-    
+//   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 //   }
 // }
 
-// showMyDB(personalMovieDB.private);
+// // start();
+
+// const personalMovieDB = {
+//   count: numberOfFilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false
+// };
+
+// function rememberMyFilms() {
+//   // 1
+//   for (let i = 0; i < 2; i++) {
+//     const a = prompt('Один из последних просмотренных фильмов?', ''),
+//       b = prompt('На сколько оцените его?', '');
+
+//     if (a !== null && b !== null && a !== '' && b !== '' && a.length < 50 && b < 50) {
+//       personalMovieDB.movies[a] = b;
+//     } else {
+//       i--;
+//     }
+//   }
+// }
+
+// // rememberMyFilms();
+
+
+// function detectPersonalLevel() {
+//   // 3 
+//   if (personalMovieDB.count < 10) {
+//     console.log("Просмотрено довольно мало фильмов");
+//   } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//     console.log("Вы классический зритель");
+//   } else if (personalMovieDB.count >= 30) {
+//     console.log("Вы киноман");
+//   } else {
+//     console.log('Произошла ошибка');
+//   }
+// }
+
+// // detectPersonalLevel();
+
+// function showMyDB() {
+//    if (!personalMovieDB.privat){
+//       console.log(personalMovieDB);
+//    } else{
+     
+//    }
+// }
+
+// showMyDB();
+
+// // вариант учителя с hidden
+
+// // function showMyDB(hidden) {
+// //   if (!hidden){
+// //      console.log(personalMovieDB);
+// //   } else{
+    
+// //   }
+// // }
+
+// // showMyDB(personalMovieDB.private);
 
 
 
-function writeYourGenres (){
-    for (let i =1; i <= 3; i++) {
-      let w = prompt(`Ваш любимый жанр под номером ${i}`);
-      personalMovieDB.genres[i - 1] = w;
-    }
-}
+// function writeYourGenres (){
+//     for (let i =1; i <= 3; i++) {
+//       let w = prompt(`Ваш любимый жанр под номером ${i}`);
+//       personalMovieDB.genres[i - 1] = w;
+//     }
+// }
 
-writeYourGenres();
+// writeYourGenres();
+
+
+// const options = {
+//   name: 'test',
+//   width: 1024,
+//   height: 1024,
+//   colors : {
+//     border: 'black',
+//     bg: 'red',
+//   }
+// };
+
+// // console.log(options.name);
+
+// // delete options.name;
+
+// for (let key in options){
+//   console.log (`Свойство ${key} имеет значение ${options[key]}`);
+// } 
+
+let myObj = {
+  color: {
+    back : 'red',
+    front: 'white',
+    side: 'gray',
+  },
+  size : {
+    big: "24px",
+    small: "18px",
+  },
+  attitude: "hard",
+  simplicity: "simple",
+  sideOnes: "yesIndeed",
+};
+
+// console.log(Object.keys(myObj).length);
+
+
+let dlina = Object.keys(myObj).length;
+let dlinaMinusOne = Object.keys(myObj).length - 1;
+let lastOne = dlina - 1;
+
+console.log(dlinaMinusOne);
