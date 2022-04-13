@@ -340,7 +340,7 @@
 //    if (!personalMovieDB.privat){
 //       console.log(personalMovieDB);
 //    } else{
-     
+
 //    }
 // }
 
@@ -352,7 +352,7 @@
 // //   if (!hidden){
 // //      console.log(personalMovieDB);
 // //   } else{
-    
+
 // //   }
 // // }
 
@@ -411,3 +411,322 @@
 // let lastOne = dlina - 1;
 
 // console.log(dlinaMinusOne);
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+// **** задание 4 - урок 24 - Практика , ч4. Используем объекты.mp4  мой вариант ****
+
+// let numberOfFilms;
+
+// function start() {
+//   numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+//   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//   }
+// }
+
+// // start();
+
+// const personalMovieDB = {
+//   count: numberOfFilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false
+// };
+
+// function rememberMyFilms() {
+//   // 1
+//   for (let i = 0; i < 2; i++) {
+//     const a = prompt('Один из последних просмотренных фильмов?', ''),
+//       b = prompt('На сколько оцените его?', '');
+
+//     if (a !== null && b !== null && a !== '' && b !== '' && a.length < 50 && b < 50) {
+//       personalMovieDB.movies[a] = b;
+//     } else {
+//       i--;
+//     }
+//   }
+// }
+
+// // rememberMyFilms();
+
+
+// function detectPersonalLevel() {
+//   // 3 
+//   if (personalMovieDB.count < 10) {
+//     console.log("Просмотрено довольно мало фильмов");
+//   } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//     console.log("Вы классический зритель");
+//   } else if (personalMovieDB.count >= 30) {
+//     console.log("Вы киноман");
+//   } else {
+//     console.log('Произошла ошибка');
+//   }
+// }
+
+// // detectPersonalLevel();
+
+
+// function showMyDB() {
+//   if (!personalMovieDB.privat) {
+//     console.log(personalMovieDB);
+//   } else {
+
+//   }
+// }
+
+// showMyDB();
+
+
+
+// function writeYourGenres() {
+//   for (let i = 1; i <= 3; i++) {
+//     let w = prompt(`Ваш любимый жанр под номером ${i}`);
+//     while (w === null || w == '') {
+//       let w = prompt(`Ваш любимый жанр под номером ${i}`);
+//     }
+
+//     personalMovieDB.genres[i - 1] = w;
+//   }
+//   return;
+// }
+
+// writeYourGenres();
+
+
+// function namka (){
+//   alert("semral");
+// }
+
+// namka();
+
+
+
+// Подпункт 1
+
+// вар 1
+
+// const personalMovieDBFunctions = {
+//      start: start(),
+//      detectPersonalLevel: detectPersonalLevel(),
+//      rememberMyFilms: rememberMyFilms(),
+//      showMyDB: showMyDB(),
+//      writeYourGenres: writeYourGenres(),
+// };
+
+// let mergedPersonalMovieDB = {
+//   ...personalMovieDB,
+//   ...personalMovieDBFunctions,
+// };
+
+// console.log(mergedPersonalMovieDB);
+
+// вар 2
+
+// let personalMovieDBFunctions = {
+//   // start: start(),
+//   // detectPersonalLevel: detectPersonalLevel(),
+//   // rememberMyFilms: rememberMyFilms(),
+//   // showMyDB: showMyDB(),
+//   writeYourGenres: writeYourGenres(),
+// };
+
+// let newF = Object.setPrototypeOf(personalMovieDBFunctions, personalMovieDB);
+
+// console.log(newF.writeYourGenres());
+
+// вар 3 по моему получилось, но не могу включить функции выборочно
+
+// function namka (){
+//   alert("semral");
+// }
+
+// const personalMovieDBFunctions = {
+//      start: start(),
+//      detectPersonalLevel: detectPersonalLevel(),
+//      rememberMyFilms: rememberMyFilms(),
+//      showMyDB: showMyDB(),
+//      writeYourGenres: writeYourGenres(),
+//      namka1: namka,
+// };
+
+// Object.setPrototypeOf(personalMovieDB, personalMovieDBFunctions);
+
+// console.log(personalMovieDB);
+
+// вар 4 - вроде вот оно *****
+
+// personalMovieDB.start = start();
+// personalMovieDB.detectPersonalLevel = detectPersonalLevel();
+// personalMovieDB.rememberMyFilms = rememberMyFilms();
+// personalMovieDB.showMyDB = showMyDB();
+// personalMovieDB.writeYourGenres = writeYourGenres();
+// personalMovieDB.namka = namka();
+
+
+// подпункт 2
+
+// let privat;
+
+// personalMovieDB.toggleVisibleMyDB = function(){
+//   let privat = personalMovieDB.privat;
+
+//     if(!privat){
+//       privat = true;
+//     } else {
+//       privat = false;
+//     } 
+//     return;
+// };
+
+// personalMovieDB.toggleVisibleMyDB();
+// console.log(personalMovieDB.toggleVisibleMyDB());
+
+// personalMovieDB.toggleVisibleMyDB();
+
+// personalMovieDB.privat = true;
+
+// console.log(personalMovieDB.toggleVisibleMyDB());
+// console.log(personalMovieDB);
+
+// вар 2
+// let privat;
+
+// function toggleVisibleMyDB(_pr) {
+//   let privat = personalMovieDB.privat;
+//   if(!privat){
+//           privat = true;
+//         } else {
+//           privat = false;
+//         } 
+//         console.log(privat);
+//         return;      
+// }
+
+// toggleVisibleMyDB();
+// console.log(privat);
+// personalMovieDB.toggleVisibleMyDB = toggleVisibleMyDB();
+
+// // console.log(personalMovieDB.toggleVisibleMyDB);
+// console.log(personalMovieDB);
+
+// вар 3 - а вот и он по моему ******
+
+// function toggleVisibleMyDB() {
+//    if (!personalMovieDB.privat){
+//     personalMovieDB.privat = true;
+//    } else{
+//     personalMovieDB.privat = false;
+//    }
+//   //  console.log(personalMovieDB.privat);
+// }
+// toggleVisibleMyDB();
+// // console.log(personalMovieDB.privat);
+
+
+// // подпункт 3
+
+// const genreArr = [personalMovieDB.genres];
+// console.log(genreArr);
+
+// genreArr.forEach((elem, i){  
+//     console.log(`Любимый жанр ${i + 1} - это ${elem[i]}`);
+//     console.log(elem);
+//     console.log(i);
+// });
+// console.log(typeof[genreArr]);
+
+// genreArr.forEach((elem, i) => {
+//   console.log('Index: ' + i + ' Value: ' + elem);
+// });
+
+// const numbers = [personalMovieDB.genres];
+
+// numbers.forEach((number, index) => {
+//   console.log('Index: ' + index + ' Value: ' + number);
+// });
+
+
+// // **** задание 4 - урок 24 - Практика , ч4. Используем объекты.mp4  вариант учителя ****
+
+
+const personalMovieDB = {
+  count: 0,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+
+  start: function () {
+    personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+    while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+      personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    }
+  },
+
+  rememberMyFilms: function () {
+    // 1
+    for (let i = 0; i < 2; i++) {
+      const a = prompt('Один из последних просмотренных фильмов?', ''),
+        b = prompt('На сколько оцените его?', '');
+
+      if (a !== null && b !== null && a !== '' && b !== '' && a.length < 50 && b < 50) {
+        personalMovieDB.movies[a] = b;
+      } else {
+        i--;
+      }
+    }
+  },
+
+  detectPersonalLevel: function() {
+    // 3 
+    if (personalMovieDB.count < 10) {
+      console.log("Просмотрено довольно мало фильмов");
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+      console.log("Вы классический зритель");
+    } else if (personalMovieDB.count >= 30) {
+      console.log("Вы киноман");
+    } else {
+      console.log('Произошла ошибка');
+    }
+  },
+
+  showMyDB: function() {
+    if (!personalMovieDB.privat) {
+      console.log(personalMovieDB);
+    } else {  
+    }
+  },
+
+toggleVisibleMyDB: function() {
+       if (!personalMovieDB.privat){
+        personalMovieDB.privat = true;
+       } else{
+        personalMovieDB.privat = false;
+       }
+    },
+
+  writeYourGenres: function() {
+    for (let i = 1; i <= 3; i++) {
+      let w = prompt(`Ваш любимый жанр под номером ${i}`);
+      while (w === null && w == '') {
+        let w = prompt(`Ваш любимый жанр под номером ${i}`);
+      }
+  
+      personalMovieDB.genres[i - 1] = w;
+    }
+    personalMovieDB.genres.forEach((elem, i) => {  
+      console.log(`Любимый жанр ${i + 1} - это ${elem}`);
+    });
+  },
+
+
+
+};
+
+
+
